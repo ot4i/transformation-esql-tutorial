@@ -1,0 +1,64 @@
+CREATE COMPUTE MODULE Transformation_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		CALL CopyMessageHeaders();
+		-- CALL CopyEntireMessage();
+		
+		CREATE LASTCHILD OF OutputRoot DOMAIN 'XMLNSC';
+		-- create references placeholders (the values will be changed later)
+		DECLARE invoice REFERENCE TO InputRoot.XMLNSC.SaleEnvelope.SaleList.Invoice;
+		DECLARE statement REFERENCE TO OutputRoot.XMLNSC.SaleEnvelope.SaleList;
+		DECLARE article REFERENCE TO OutputRoot.XMLNSC.SaleEnvelope.SaleList;
+		DECLARE amount REFERENCE TO OutputRoot.XMLNSC.SaleEnvelope.SaleList;
+		DECLARE total DECIMAL 0;
+		
+		-- while invoice has next element
+		WHILE LASTMOVE(invoice) DO
+			-- create the new message
+			CREATE LASTCHILD OF OutputRoot.XMLNSC.SaleEnvelope.SaleList AS statement Type XMLNSC.Folder Name 'Statement';
+			SET statement.(XMLNSC.Attribute)Type = 'Monthly';
+			SET statement.(XMLNSC.Attribute)Style = 'Full';
+			
+			SET statement.Customer.(XMLNSC.Field)Initials = invoice.Initial[1] || invoice.Initial[2];
+			SET statement.Customer.(XMLNSC.Field)Name = invoice.Surname;
+			SET statement.Customer.(XMLNSC.Field)Balance = invoice.Balance;
+			
+			SET total = 0;
+			DECLARE items REFERENCE TO invoice.Item;
+			-- while items has next element
+			WHILE LASTMOVE(items) DO
+				-- create new Article
+				CREATE LASTCHILD OF statement.Purchases AS article Type XMLNSC.Folder Name 'Article';
+				SET article.(XMLNSC.Field)Desc = items.Description;
+				SET article.(XMLNSC.Field)Cost = CAST(items.Price AS DECIMAL) * 1.6;
+				SET article.(XMLNSC.Field)Qty = items.Quantity;
+				
+				SET total = (CAST(items.Price AS DECIMAL) * 1.6) * CAST(items.Quantity AS INTEGER);
+				-- go to the next item
+				MOVE items NEXTSIBLING NAME 'Item';
+			END WHILE;
+			
+			SET statement.(XMLNSC.Field)Amount = total;
+			SET statement.Amount.(XMLNSC.Attribute)Currency = invoice.Currency;
+			
+			-- go to the next invoice
+			MOVE invoice NEXTSIBLING NAME 'Invoice';
+		END WHILE;
+		
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;
