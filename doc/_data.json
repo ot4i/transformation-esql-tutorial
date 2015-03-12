@@ -1,0 +1,353 @@
+{
+  "version":"0.4",
+  "description":"Tutorial Content for Tutorial Framework.",
+  "header":
+  {
+    "lang":"en-us",
+    "charset":"UTF-8",
+    "metaDescription":"IBM Integration Bus Tutorial",
+    "metaAuthor":"IBM",
+    "keywords":"keywords",
+    "robots":"index,follow",
+    "source":"IBM Integration Bus Tutorial"
+  },
+  "pageContent": 
+  {
+    "comments":"Must use underscore for en-us.",
+      "navItems":
+      {
+        "_common":
+        {
+          "headlineMain":"IBM Integration Bus",
+          "headlineSub":"", "buttonBackToGallery":
+          {
+            "_comments":"formal phrase == 'Back To Gallery', casual phrase == '?'",
+            "text":"Back To Gallery"
+          },
+          "buttonViewDetails":
+          {
+            "_comments":"formal phrase == 'View Details', casual phrase == '?'",
+            "text":"View Details",
+            "link":"tutorials/TransformationXSL/overview.html"
+          },
+          "buttonStartTutorial":
+          {
+            "_comments":"formal phrase == 'Start Tutorial', casual phrase == '?'",
+            "text":"Start Tutorial",
+            "link":"tutorials/TransformationXSL/steps/steps.html"
+          }, 
+          "_commentskillLevel":"1=novice, 2=beginner, 3=intermediate, 4=Advanced or experienced and 5=Expert or Guru",
+          "skillLevel":"2",
+          "_commentConceptsUsed":"Give a list",
+          "conceptsUsed":
+          [
+            {
+              "concept":"XML Transformation node",
+              "description":"XML Transformation node"
+            }
+          ]
+        },
+        "pageDetails":
+        {
+          "pageTitle":"Tutorial Overview",
+          "headlineMain":"IBM Integration Bus",
+          "headlineSub":"Show Me",
+          "section1":"Here you can explore and learn about IBM Integration Bus using tutorials.",
+          "section2":"What are you interested in?",
+          "dropdownSize":10,
+          "allTimeFavs":"ALL-TIME FAVORITES",
+          "tab1":
+          {
+            "text":"Tool Capabilities"
+          },
+          "tab2":
+          {
+            "text":"Scenarios"
+          }
+        },
+        "pageSteps":
+        {
+          "pageTitle":"Tutorial Steps",
+          "headlineMain":"IBM Integration Bus V10",
+          "headlineSub":"Show Me",
+          "section1":"Here you can explore and learn about IBM Integration Bus using tutorials.",
+          "section2":"What are you interested in?",
+          "dropdownSize":10,
+          "allTimeFavs":"ALL-TIME FAVORITES",
+          "tab1":
+          {
+            "text":"Tool Capabilities"
+          },
+          "tab2":
+          {
+            "text":"Scenarios"
+          }
+        }  
+      }
+  },
+  "tutorial": 
+  { "_common":
+    {
+      "name":"Transformation using XSL in a message flow",
+      "shortDescription":"Learn how to use an XML Transformation node to transform data using an XML Stylesheet in an IBM Integration Bus message flow by exploring this simple example.",
+      "_comment_category":"Categories are either 'tool' or 'scenario'",
+      "category":"tool",
+      "isPattern" : "false",
+      "isFavorite"  : "true",
+      "durationText":"This tutorial takes approximately",
+      "durationTime":"5 minutes",
+	  "resourceToOpen":"MainFlow"
+    },
+    "pageDetails":
+    {
+      "topicsName":"Tutorial Topics",
+      "topicList":
+      [
+        {
+          "title":"XML Transformation node",
+          "description":"XML Transformation node"
+        },
+        {
+          "title":"XML parsing and writing",
+          "description":"XML parsing and writing"
+        }
+      ],
+      "outcomesName":"Learning outcomes",
+      "outcomeList":
+      [
+        {
+          "title":"Use IBM Integration Bus to create and invoke a message flow which transforms data using an XML stylesheet.",
+          "description":"Use IBM Integration Bus to create and invoke a message flow which transforms data using an XML stylesheet."
+        }
+      ],
+      "summary":
+        {
+          "comments":"",
+          "overviewName":"OVERVIEW",
+          "sections":
+          [
+            {
+            "section":"This tutorial demonstrates a simple message flow which receives XML data over HTTP. The flow transforms the input XML structure into a different output XML structure using an XML Transformation node (whose behavior is based on a stylesheet, and sends this back to the HTTP request."
+            },
+            {
+            "section":"In IBM Integration Bus, message flows can be used to transform input data structures into output data structures. Several transformation options are provided including an XML Transformation node, a graphical data mapping node, a Compute node (which uses ESQL), a JavaCompute node (which can navigate data using an IBM Integration Bus Java API or JAXB) and a .NET Compute node."
+            }
+          ]
+        }
+      },
+      "pageSteps":
+      {
+        "concept":
+        {
+          "overview":
+          {
+            "comments":"",
+            "name":"Overview",
+            "heading":"Overview",
+            "sections":
+            [
+              {
+              "section":"This tutorial demonstrates a simple message flow which receives XML data over HTTP. The flow transforms the input XML structure into a different output XML structure using an XML Transformation node (whose behavior is based on a stylesheet, and sends this back to the HTTP request."
+              },
+              {
+              "section":"You will import the message flow to your Integration Toolkit workspace, deploy it to your default integration server, and invoke the message flow by using the Flow exerciser."
+              }
+            ]
+          },
+          "productComponentsUsed":
+          {
+            "comments":"",
+            "sections":
+            [
+              {
+              "section":"Application"
+              }
+            ]
+          },
+          "description":
+          {
+            "comment":"",
+            "sections":
+            [
+              {
+                "section":"Developing integration solutions by using applications."
+              }
+            ]
+          },
+		  "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Developing integration solutions by using applications",
+				"link":"com.ibm.etools.mft.doc/bi12002_.htm"
+				}
+			  ]
+		    }
+        },
+        "create":
+        {
+          "overview":
+          {
+            "comment":"",
+            "name":"Create",
+            "heading":"Import projects",
+            "sections":
+            [
+              {
+                "section":"The Transformation_XSL application includes one project that is imported into your workspace."
+              }
+            ]
+          },
+          "description":
+          {
+            "comment":"",
+            "sections":
+            [
+              {
+                "section":"Developing integration solutions by using applications."
+              },
+              {
+                "section":"The Transformation_XSL application is shown in the Application Development view of your workspace. You can explore the message flow Transformation_XSL.msgflow inside the application before deploying the application to an integration node."
+              }
+            ]
+          },
+          "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Developing integration solutions by using applications",
+				"link":"com.ibm.etools.mft.doc/bi12002_.htm"
+				}
+			  ]
+		    },
+			"actionName":"Import"
+        },
+        "prepare":
+        {
+          "overview":
+          {
+            "comment":"",
+            "name":"Prepare",
+            "heading":"Imported projects",
+            "sections":
+            [
+              {
+                "section":"The Transformation_XSL application is shown in the Application Development view of your workspace."
+              }, 
+              {
+                "section":""
+              },
+              {
+                "section":"The application will be deployed to your default integration server. The message flow is then started and ready to be invoked."
+              }
+            ]
+          },
+          "description":
+          {
+            "comment":"",
+            "name":"Deploy details",
+            "heading":"",
+            "sections":
+            [
+              {
+                "section":"The Transformation_XSL application will be deployed to your default integration server."
+              },
+              {
+                "section":"The message flow is then started and ready to be invoked."
+              }
+            ]
+          },
+          "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Developing integration solutions by using applications",
+				"link":"com.ibm.etools.mft.doc/bi12002_.htm"
+				}
+			  ]
+		    },
+			"actionName":"Deploy"
+        },
+        "run":
+        {
+          "cleanupName":"Clean up", 
+          "cleanupDescription":"Clean up and remove any changes made by the tutorial.", 
+          "overview":
+          {
+            "comments":"",
+            "name":"Run",
+            "heading":"Follow these steps to complete the tutorial",
+            "sections":
+            [
+              {
+              "section":"The Transformation_XSL application is shown in the Application Development view of your workspace.", 
+                "steps":
+                {
+                "type":"ordered",
+                "details":
+                  [
+                    { 
+                      "name":"",
+                      "details":"Open the Transformation_XSL message flow, and click the Flow Exerciser icon to start recording the message path through the flow."
+                    },
+                    { 
+                      "name":"",
+                      "details":"Click the Send Message icon and create a new input message."
+                    },
+					{ 
+                      "name":"",
+                      "details":"Choose Message1, edit the message data if you like, and click Send. Your request message is sent to the HTTP input node."
+                    }
+                  ]
+                }
+              },
+			  {
+              "section":"After the request message is processed, the message path is automatically highlighted on the service description diagram.",
+			  "steps":
+                {
+                "type":"unordered",
+                "details":
+                  [
+                    { 
+                      "name":"",
+                      "details":"Click on the highlighted operation to see the message path through the message flow."
+                    },
+                    { 
+                      "name":"",
+                      "details":"You can click on any connection to see the data that passed through that connection. You can see that the request (input) message data has been transformed into a different response XML message."
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+		  "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Developing integration solutions by using applications",
+				"link":"com.ibm.etools.mft.doc/bi12002_.htm"
+				},
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Testing your message flow by using the Flow exerciser",
+				"link":"com.ibm.etools.mft.doc/rt26110_.htm"
+				}
+			  ]
+		    }
+        } 
+      }
+    }
+  }
