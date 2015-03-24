@@ -75,7 +75,7 @@
                         "section": "This tutorial demonstrates a simple message flow which receives XML data over HTTP. The flow transforms the input XML structure into a different output XML structure using a Compute node (whose behavior is based on ESQL), and sends this back to the HTTP request."
                     },
                     {
-                        "section": "In IBM Integration Bus, message flows can be used to transform input data structures into output data structures. Several transformation options are provided including a Compute node (which uses ESQL), a graphical data mapping node, a JavaCompute node (which can navigate data using an IBM Integration Bus Java API or JAXB), an XML Transformation node and a .NET Compute node."
+                        "section": "In IBM Integration Bus, message flows can be used to transform input data structures into output data structures. Several transformation options are provided including a including a Compute node (which uses ESQL), a Mapping node, a JavaCompute node (which can navigate data using an IBM Integration Bus Java API or JAXB), an XML Transformation node and a .NETCompute node."
                     }
                 ]
             },
