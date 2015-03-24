@@ -28,13 +28,13 @@
           {
             "_comments":"formal phrase == 'View Details', casual phrase == '?'",
             "text":"View Details",
-            "link":"tutorials/TransformationXSL/overview.html"
+            "link":"tutorials/TransformationESQL/overview.html"
           },
           "buttonStartTutorial":
           {
             "_comments":"formal phrase == 'Start Tutorial', casual phrase == '?'",
             "text":"Start Tutorial",
-            "link":"tutorials/TransformationXSL/steps/steps.html"
+            "link":"tutorials/TransformationESQL/steps/steps.html"
           }, 
           "_commentskillLevel":"1=novice, 2=beginner, 3=intermediate, 4=Advanced or experienced and 5=Expert or Guru",
           "skillLevel":"2",
@@ -42,8 +42,8 @@
           "conceptsUsed":
           [
             {
-              "concept":"XML Transformation node",
-              "description":"XML Transformation node"
+              "concept":"Compute node",
+              "description":"Compute node"
             }
           ]
         },
@@ -88,8 +88,8 @@
   "tutorial": 
   { "_common":
     {
-      "name":"Transformation using XSL in a message flow",
-      "shortDescription":"Learn how to use an XML Transformation node to transform data using an XML Stylesheet in an IBM Integration Bus message flow by exploring this simple example.",
+      "name":"Transformation using ESQL in a message flow",
+      "shortDescription":"Learn how to use a Compute node to transform data using ESQL in an IBM Integration Bus message flow by exploring this simple example.",
       "_comment_category":"Categories are either 'tool' or 'scenario'",
       "category":"tool",
       "isPattern" : "false",
@@ -104,8 +104,8 @@
       "topicList":
       [
         {
-          "title":"XML Transformation node",
-          "description":"XML Transformation node"
+          "title":"Compute node",
+          "description":"Compute node"
         },
         {
           "title":"XML parsing and writing",
@@ -116,8 +116,8 @@
       "outcomeList":
       [
         {
-          "title":"Use IBM Integration Bus to create and invoke a message flow which transforms data using an XML stylesheet.",
-          "description":"Use IBM Integration Bus to create and invoke a message flow which transforms data using an XML stylesheet."
+          "title":"Use IBM Integration Bus to create and invoke a message flow which transforms data using ESQL.",
+          "description":"Use IBM Integration Bus to create and invoke a message flow which transforms data using ESQL."
         }
       ],
       "summary":
@@ -127,10 +127,10 @@
           "sections":
           [
             {
-            "section":"This tutorial demonstrates a simple message flow which receives XML data over HTTP. The flow transforms the input XML structure into a different output XML structure using an XML Transformation node (whose behavior is based on a stylesheet, and sends this back to the HTTP request."
+            "section":"This tutorial demonstrates a simple message flow which receives XML data over HTTP. The flow transforms the input XML structure into a different output XML structure using a Compute node (whose behavior is based on ESQL), and sends this back to the HTTP request."
             },
             {
-            "section":"In IBM Integration Bus, message flows can be used to transform input data structures into output data structures. Several transformation options are provided including an XML Transformation node, a graphical data mapping node, a Compute node (which uses ESQL), a JavaCompute node (which can navigate data using an IBM Integration Bus Java API or JAXB) and a .NET Compute node."
+            "section":"In IBM Integration Bus, message flows can be used to transform input data structures into output data structures. Several transformation options are provided including a Compute node (which uses ESQL), a graphical data mapping node, a JavaCompute node (which can navigate data using an IBM Integration Bus Java API or JAXB), an XML Transformation node and a .NET Compute node."
             }
           ]
         }
@@ -147,7 +147,7 @@
             "sections":
             [
               {
-              "section":"This tutorial demonstrates a simple message flow which receives XML data over HTTP. The flow transforms the input XML structure into a different output XML structure using an XML Transformation node (whose behavior is based on a stylesheet, and sends this back to the HTTP request."
+              "section":"This tutorial demonstrates a simple message flow which receives XML data over HTTP. The flow transforms the input XML structure into a different output XML structure using a Compute node (whose behavior is based on ESQL), and sends this back to the HTTP request."
               },
               {
               "section":"You will import the message flow to your Integration Toolkit workspace, deploy it to your default integration server, and invoke the message flow by using the Flow exerciser."
@@ -197,7 +197,7 @@
             "sections":
             [
               {
-                "section":"The Transformation_XSL application includes one project that is imported into your workspace."
+                "section":"The Transformation_ESQL application includes one project that is imported into your workspace."
               }
             ]
           },
@@ -210,7 +210,7 @@
                 "section":"Developing integration solutions by using applications."
               },
               {
-                "section":"The Transformation_XSL application is shown in the Application Development view of your workspace. You can explore the message flow Transformation_XSL.msgflow inside the application before deploying the application to an integration node."
+                "section":"The Transformation_ESQL application is shown in the Application Development view of your workspace. You can explore the message flow Transformation_ESQL.msgflow inside the application before deploying the application to an integration node."
               }
             ]
           },
@@ -238,7 +238,7 @@
             "sections":
             [
               {
-                "section":"The Transformation_XSL application is shown in the Application Development view of your workspace."
+                "section":"The Transformation_ESQL application is shown in the Application Development view of your workspace."
               }, 
               {
                 "section":""
@@ -256,7 +256,7 @@
             "sections":
             [
               {
-                "section":"The Transformation_XSL application will be deployed to your default integration server."
+                "section":"The Transformation_ESQL application will be deployed to your default integration server."
               },
               {
                 "section":"The message flow is then started and ready to be invoked."
@@ -289,7 +289,7 @@
             "sections":
             [
               {
-              "section":"The Transformation_XSL application is shown in the Application Development view of your workspace.", 
+              "section":"The Transformation_ESQL application is shown in the Application Development view of your workspace.", 
                 "steps":
                 {
                 "type":"ordered",
@@ -297,7 +297,7 @@
                   [
                     { 
                       "name":"",
-                      "details":"Open the Transformation_XSL message flow, and click the Flow Exerciser icon to start recording the message path through the flow."
+                      "details":"Open the Transformation_ESQL message flow, and click the Flow Exerciser icon to start recording the message path through the flow."
                     },
                     { 
                       "name":"",
