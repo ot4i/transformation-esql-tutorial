@@ -201,20 +201,7 @@
                                         "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' /> to select a message to send to the flow."
                                     },
                                     {
-                                        "details": "Choose Message1, edit the message data if you like, and click Send. Your request message is sent to the HTTP input node.",
-                                        "substeps": 
-										{
-                                            "type": "unordered",
-                                            "details": 
-											[
-                                                {
-                                                    "details": "Substep one"
-                                                },
-                                                {
-                                                    "details": "Substep two"
-                                                }
-                                            ]
-                                        }
+                                        "details": "Choose Message1, edit the message data if you like, and click Send. Your request message is sent to the HTTP input node."
                                     }
                                 ]
                             }
