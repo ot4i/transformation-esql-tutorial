@@ -120,7 +120,7 @@
 					[
                         {
                             "title": "Knowledge Center link to ",
-                            "description": "Developing integration solutions by using applications",
+                            "description": "Developing integration solutions from scratch",
                             "link": "com.ibm.etools.mft.doc/bi12002_.htm"
                         }
                     ]
@@ -164,8 +164,8 @@
 					[
                         {
                             "title": "Knowledge Center link to ",
-                            "description": "Developing integration solutions by using integration services",
-                            "link": "com.ibm.etools.mft.doc/bi12002_.htm"
+                            "description": "Compute node",
+                            "link": "com.ibm.etools.mft.doc/ac04660_.htm"
                         }
                     ]
                 },
@@ -221,12 +221,6 @@
 				{
                     "title": "Find out more",
                     "details": 
-					[
-                        {
-                            "title": "Knowledge Center link to ",
-                            "description": "Developing integration solutions by using applications",
-                            "link": "com.ibm.etools.mft.doc/bi12002_.htm"
-                        },
                         {
                             "title": "Knowledge Center link to ",
                             "description": "Testing your message flow by using the Flow exerciser",
