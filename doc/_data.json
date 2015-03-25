@@ -224,6 +224,7 @@
 				{
                     "title": "Find out more",
                     "details": 
+		    [
                         {
                             "title": "Knowledge Center link to ",
                             "description": "Testing your message flow by using the Flow exerciser",
