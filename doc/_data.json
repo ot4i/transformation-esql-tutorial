@@ -58,11 +58,11 @@
                 }
             ],
             "outcomesName": "Learning outcomes",
-            "_outcomesComment": "Use IBM Integration Bus to create and invoke a message flow which transforms data using ESQL.",
+            "_outcomesComment": "Use IBM Integration Bus to create and drive a message flow which transforms data using ESQL.",
             "outcomeList": 
 			[
                 {
-                    "title": "Use IBM Integration Bus to create and invoke a message flow which transforms data using ESQL."
+                    "title": "Use IBM Integration Bus to create and drive a message flow which transforms data using ESQL."
                 }
             ],
             "summary": 
@@ -101,12 +101,15 @@
                 "overview": 
 				{
                     "name": "Create",
-                    "heading": "Import projects",
+                    "heading": "Import project",
                     "_createComment": "A description of what will happen when the user clicks Import.",
                     "sections": 
 					[
                         {
-                            "section": "The Transformation_ESQL application includes one project that is imported into your workspace."
+                            "section": "Click <span class='uicontrol'>Import</span> and the Transformation_ESQL application will be imported into your workspace."
+                        },
+                        {
+                            "section": "The <span class='uicontrol'>Transformation_ESQL</span> message flow will be opened for you."
                         }
                     ]
                 },
@@ -144,13 +147,13 @@
                     "sections": 
 					[
                         {
-                            "section": "The Transformation_ESQL application is shown in the Application Development view of your workspace."
+                            "section": "The <span class='uicontrol'>Transformation_ESQL</span> application is now shown in the Application Development view of your workspace."
                         },
                         {
-                            "section": ""
+                            "section": "No other preparation steps are required for this tutorial."
                         },
                         {
-                            "section": "The application will be deployed to your default integration server. The message flow is then started and ready to be invoked."
+                            "section": "Next you will use the Flow exerciser to send HTTP requests to the message flow."
                         }
                     ]
                 },
@@ -188,20 +191,22 @@
                     "sections": 
 					[
                         {
-                            "section": "The Transformation_ESQL application is shown in the Application Development view of your workspace.",
+                            "section": "The <span class='uicontrol'>Transformation_ESQL</span> message flow should be open already:"
+                        },
+                            
                             "steps": 
 							{
                                 "type": "ordered",
                                 "details": 
 								[
                                     {
-                                        "details": "Open the Transformation_ESQL message flow, and click the Flow Exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start recording the message path through the flow."
+                                        "details": "Click the Flow Exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start recording the message path through the flow."
                                     },
                                     {
                                         "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' /> to select a message to send to the flow."
                                     },
                                     {
-                                        "details": "Choose Message1, edit the message data if you like, and click Send. Your request message is sent to the HTTP input node."
+                                        "details": "Choose Message1, edit the message data if you like, and click Send. Your request message is sent to the HTTP Input node."
                                     }
                                 ]
                             }
@@ -228,17 +233,6 @@
                             "title": "Knowledge Center link to ",
                             "description": "Testing your message flow by using the Flow exerciser",
                             "link": "com.ibm.etools.mft.doc/rt26110_.htm"
-                        }
-                    ]
-                },
-                "actions": 
-				{
-                    "title": "Run Actions",
-                    "details": 
-					[
-                        {
-                            "name": "Deploy",
-                            "method": "deployArtifacts()"
                         }
                     ]
                 },
