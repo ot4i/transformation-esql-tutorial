@@ -213,8 +213,11 @@
                             "section": "After the request message is processed, the message path is automatically highlighted on the message flow."
                         },
                         {
-                            "section": "Click on any connection to see the data that passed through that connection. You can see that the request (input) message data has been transformed into a different response XML message."
-                        }
+                            "section": "Click on any connection to see the data that passed through that connection."
+                        },
+                        {
+                            "section": "You can see that the request (input) message data has been transformed into a different response XML message."
+                        }                        
                     ]
                 },
                 "helpLinks": 
