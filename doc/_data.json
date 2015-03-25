@@ -191,9 +191,7 @@
                     "sections": 
 					[
                         {
-                            "section": "The <span class='uicontrol'>Transformation_ESQL</span> message flow should be open already:"
-                        },
-                            
+                            "section": "The <span class='uicontrol'>Transformation_ESQL</span> message flow should be open already:",
                             "steps": 
 							{
                                 "type": "ordered",
