@@ -106,7 +106,7 @@
                     "sections": 
 					[
                         {
-                            "section": "Click <span class='uicontrol'>Import</span> and the Transformation_ESQL application will be imported into your workspace."
+                            "section": "Click <span class='uicontrol'>Import</span> and the <span class='uicontrol'>Transformation_ESQL</span> application will be imported into your workspace."
                         },
                         {
                             "section": "The <span class='uicontrol'>Transformation_ESQL</span> message flow will be opened for you."
