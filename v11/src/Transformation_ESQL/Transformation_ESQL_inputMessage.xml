@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MessagePool xmlns="http://wwww.ibm.com/iib/test/1.0.0">
+    <InputMessage timestamp="1427323274910" nodeId="FCMComposite_1_5" name="Message 1" id="1427323274910-6">
+        <plainText>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xD;
+&lt;SaleEnvelope&gt;&#xD;
+	&lt;Header&gt;&#xD;
+		&lt;SaleListCount&gt;1&lt;/SaleListCount&gt;&#xD;
+		&lt;TransformationType&gt;compute&lt;/TransformationType&gt;&#xD;
+	&lt;/Header&gt;&#xD;
+	&lt;SaleList&gt;&#xD;
+		&lt;Invoice&gt;&#xD;
+			&lt;Initial&gt;K&lt;/Initial&gt;&#xD;
+			&lt;Initial&gt;A&lt;/Initial&gt;&#xD;
+			&lt;Surname&gt;Braithwaite&lt;/Surname&gt;&#xD;
+			&lt;Item&gt;&#xD;
+				&lt;Code&gt;00&lt;/Code&gt;&#xD;
+				&lt;Code&gt;01&lt;/Code&gt;&#xD;
+				&lt;Code&gt;02&lt;/Code&gt;&#xD;
+				&lt;Description&gt;Twister&lt;/Description&gt;&#xD;
+				&lt;Category&gt;Games&lt;/Category&gt;&#xD;
+				&lt;Price&gt;00.30&lt;/Price&gt;&#xD;
+				&lt;Quantity&gt;01&lt;/Quantity&gt;&#xD;
+			&lt;/Item&gt;&#xD;
+			&lt;Item&gt;&#xD;
+				&lt;Code&gt;02&lt;/Code&gt;&#xD;
+				&lt;Code&gt;03&lt;/Code&gt;&#xD;
+				&lt;Code&gt;01&lt;/Code&gt;&#xD;
+				&lt;Description&gt;The Times Newspaper&lt;/Description&gt;&#xD;
+				&lt;Category&gt;Books and Media&lt;/Category&gt;&#xD;
+				&lt;Price&gt;00.20&lt;/Price&gt;&#xD;
+				&lt;Quantity&gt;01&lt;/Quantity&gt;&#xD;
+			&lt;/Item&gt;&#xD;
+			&lt;Balance&gt;00.50&lt;/Balance&gt;&#xD;
+			&lt;Currency&gt;Sterling&lt;/Currency&gt;&#xD;
+		&lt;/Invoice&gt;&#xD;
+		&lt;Invoice&gt;&#xD;
+			&lt;Initial&gt;T&lt;/Initial&gt;&#xD;
+			&lt;Initial&gt;J&lt;/Initial&gt;&#xD;
+			&lt;Surname&gt;Dunnwin&lt;/Surname&gt;&#xD;
+			&lt;Item&gt;&#xD;
+				&lt;Code&gt;04&lt;/Code&gt;&#xD;
+				&lt;Code&gt;05&lt;/Code&gt;&#xD;
+				&lt;Code&gt;01&lt;/Code&gt;&#xD;
+				&lt;Description&gt;The Origin of Species&lt;/Description&gt;&#xD;
+				&lt;Category&gt;Books and Media&lt;/Category&gt;&#xD;
+				&lt;Price&gt;22.34&lt;/Price&gt;&#xD;
+				&lt;Quantity&gt;02&lt;/Quantity&gt;&#xD;
+			&lt;/Item&gt;&#xD;
+			&lt;Item&gt;&#xD;
+				&lt;Code&gt;06&lt;/Code&gt;&#xD;
+				&lt;Code&gt;07&lt;/Code&gt;&#xD;
+				&lt;Code&gt;01&lt;/Code&gt;&#xD;
+				&lt;Description&gt;Microscope&lt;/Description&gt;&#xD;
+				&lt;Category&gt;Miscellaneous&lt;/Category&gt;&#xD;
+				&lt;Price&gt;36.20&lt;/Price&gt;&#xD;
+				&lt;Quantity&gt;01&lt;/Quantity&gt;&#xD;
+			&lt;/Item&gt;&#xD;
+			&lt;Balance&gt;81.84&lt;/Balance&gt;&#xD;
+			&lt;Currency&gt;Euros&lt;/Currency&gt;&#xD;
+		&lt;/Invoice&gt;&#xD;
+	&lt;/SaleList&gt;&#xD;
+	&lt;Trailer&gt;&#xD;
+		&lt;CompletionTime&gt;12.00.00&lt;/CompletionTime&gt;&#xD;
+	&lt;/Trailer&gt;&#xD;
+&lt;/SaleEnvelope&gt;</plainText>
+    </InputMessage>
+</MessagePool>

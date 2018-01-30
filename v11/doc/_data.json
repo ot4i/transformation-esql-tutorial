@@ -1,0 +1,250 @@
+{
+    "version": "0.6",
+    "pageContent": 
+	{
+        "_comments": "JSON object that contains data for page labels, buttons, etc.",
+        "navItems": 
+		{
+            "_common": 
+			{
+                "buttonBackToGallery": 
+				{
+                    "name": "Back To Gallery",
+					"method": "backToGallery()",
+					"idName": "backToGallery"	
+                },
+                "buttonStartTutorial": 
+				{
+                    "name": "Start Tutorial",
+					"method": "startTutorialFromDetailsScreen()",
+					"idName": "startTutorial"
+                },
+				"buttonViewDetails": 
+				{
+                    "name": "View Details",
+					"method": "viewDetails()",
+					"idName": "stepsViewDetails"	
+                }
+            }
+        }
+    },
+    "tutorial": 
+	{
+        "_common": 
+		{
+            "name": "Transformation using ESQL in a message flow",
+            "shortDescription": "Learn how to use a Compute node to transform data using ESQL in an IBM Integration Bus message flow by exploring this simple example.",
+            "durationText": "This tutorial takes approximately",
+            "durationTime": "5 minutes",
+            "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
+            "resourceToOpen": "MainFlow",
+            "helpLink": 
+			{
+                "text": "IBM Knowledge Center",
+                "link": "/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm"
+            }
+        },
+        "pageDetails": 
+		{
+            "topicsName": "Tutorial Topics",
+            "_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
+            "topicList": 
+			[
+                {
+                    "title": "Compute node"
+                },
+                {
+                    "title": "XML parsing and writing"
+                }
+            ],
+            "outcomesName": "Learning outcomes",
+            "_outcomesComment": "Use IBM Integration Bus to create and drive a message flow which transforms data using ESQL.",
+            "outcomeList": 
+			[
+                {
+                    "title": "Use IBM Integration Bus to create and drive a message flow which transforms data using ESQL."
+                }
+            ],
+            "summary": 
+			{
+                "overviewName": "OVERVIEW",
+                "_overviewComment": "This tutorial demonstrates a simple message flow which receives XML data over HTTP. The flow transforms the input XML structure into a different output XML structure using a Compute node (whose behavior is based on ESQL), and sends this back to the HTTP request.",
+                "sections": 
+				[
+                    {
+                        "section": "This tutorial demonstrates a simple message flow which receives XML data over HTTP. The flow transforms the input XML structure into a different output XML structure using a Compute node (whose behavior is based on ESQL), and sends this back to the HTTP request."
+                    },
+                    {
+                        "section": "In IBM Integration Bus, message flows can be used to transform input data structures into output data structures. Several transformation options are provided including a Compute node (which uses ESQL), a Mapping node, a JavaCompute node (which can navigate data using an IBM Integration Bus Java API or JAXB), an XSL Transform node and a .NETCompute node."
+                    }
+                ]
+            },
+			"helpLinks": 
+			{
+				"_helpLinksComment": "Helplinks that have a type:web attribute are rendered as web links. Otherwise, links are assumed to be to embedded Help topics in the Knowledge Center.",
+				"title": "Find out more",
+				"details": 
+				[
+					{
+						"title": "Knowledge Center link to ",
+						"description": "Developing integration solutions by using applications",
+						"link": "com.ibm.etools.mft.doc/bi12002_.htm",
+						"type": "help"
+					}
+				]
+			}
+        },
+        "pageSteps": 
+		{
+            "create": 
+			{
+                "overview": 
+				{
+                    "name": "Create",
+                    "heading": "Import project",
+                    "_createComment": "A description of what will happen when the user clicks Import.",
+                    "sections": 
+					[
+                        {
+                            "section": "Click <span class='uicontrol'>Import</span> and the <span class='uicontrol'>Transformation_ESQL</span> application will be imported into your workspace."
+                        },
+                        {
+                            "section": "The <span class='uicontrol'>Transformation_ESQL</span> message flow will be opened for you."
+                        }
+                    ]
+                },
+                "helpLinks": 
+				{
+                    "title": "Find out more",
+                    "details": 
+					[
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Developing integration solutions from scratch",
+                            "link": "com.ibm.etools.mft.doc/bi12002_.htm"
+                        }
+                    ]
+                },
+                "actions": 
+				{
+                    "title": "Create Actions",
+                    "details": 
+					[
+                        {
+                            "name": "Import",
+                            "method": "importArtifacts()"
+                        }
+                    ]
+                }
+            },
+            "prepare": 
+			{
+                "overview": 
+				{
+                    "name": "Prepare",
+                    "heading": "Imported projects",
+                    "_prepareComment": "A description of what just happened when the user clicked Import, and what will happen when the user clicks Deploy.",
+                    "sections": 
+					[
+                        {
+                            "section": "The <span class='uicontrol'>Transformation_ESQL</span> application is now shown in the Application Development view of your workspace."
+                        },
+                        {
+                            "section": "No other preparation steps are required for this tutorial."
+                        },
+                        {
+                            "section": "Next you will use the Flow exerciser to send HTTP requests to the message flow."
+                        }
+                    ]
+                },
+                "helpLinks": 
+				{
+                    "title": "Find out more",
+                    "details": 
+					[
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Compute node",
+                            "link": "com.ibm.etools.mft.doc/ac04660_.htm"
+                        }
+                    ]
+                },
+                "actions-removed": 
+				{
+                    "title": "Prepare Actions",
+                    "details": 
+					[
+                        {
+                            "name": "Deploy",
+                            "method": "deployArtifacts()"
+                        }
+                    ]
+                }
+            },
+            "run": 
+			{
+                "overview": 
+				{
+                    "name": "Run",
+                    "heading": "Follow these steps to complete the tutorial",
+                    "_runComment": "The full steps for the user to run through the tutorial. Use 'sections' to render paragraphs, 'steps' with a type of 'ordered' or 'unordered' to render HTML lists, and 'substeps' to render nested lists.",
+                    "sections": 
+					[
+                        {
+                            "section": "The <span class='uicontrol'>Transformation_ESQL</span> message flow should be open already:",
+                            "steps": 
+							{
+                                "type": "ordered",
+                                "details": 
+								[
+                                    {
+                                        "details": "Click the Flow Exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start recording the message path through the flow."
+                                    },
+                                    {
+                                        "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' /> to select a message to send to the flow."
+                                    },
+                                    {
+                                        "details": "Choose Message1, edit the message data if you like, and click Send. Your request message is sent to the HTTP Input node."
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "section": "After the request message is processed, the message path is automatically highlighted on the message flow."
+                        },
+                        {
+                            "section": "Click on any connection to see the data that passed through that connection."
+                        },
+                        {
+                            "section": "You can see that the request (input) message data has been transformed into a different response XML message."
+                        }                        
+                    ]
+                },
+                "helpLinks": 
+				{
+                    "title": "Find out more",
+                    "details": 
+		    [
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Testing your message flow by using the Flow exerciser",
+                            "link": "com.ibm.etools.mft.doc/rt26110_.htm"
+                        }
+                    ]
+                },
+				"exits": 
+				{
+					"title": "Run Exits",
+					"details": 
+					[
+						{
+							"name": "Clean Up",
+							"description": "Clean up and remove any changes in your workspace made by the tutorial.",
+							"method": "cleanUp()"
+						}
+					]
+				}
+            }
+        }
+    }
+}
