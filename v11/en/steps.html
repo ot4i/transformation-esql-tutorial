@@ -52,7 +52,7 @@
 	<hr>
 	<div class="row">
 		<div class="small-10 medium-10 large-10 columns">
-		<h5> Learn how to use a Compute node to transform data using ESQL in an IBM Integration Bus message flow by exploring this simple example. </h5>
+		<h5> Learn how to use a Compute node to transform data using ESQL in an App Connect Enterprise message flow by exploring this simple example. </h5>
 		</div>
 		<div class="small-2 medium-2 large-2 columns">
 			<button class="small radius button right" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
@@ -107,7 +107,7 @@
 					<div class="small-2 medium-2 large-2 columns">
 					
 					
-					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('MainFlow')"> Import <img class="icon-image" src="http://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('MainFlow')"> Import <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
 										
 				    </div>
 					
@@ -117,16 +117,31 @@
 					<div class="small-12 medium-12 large-12 columns">
 					
 						<div class="row content-details">
-						  	<h4>Imported projects</h4>
+						  	<h4>Prepare an Integration Server</h4>
 						    
 						    
-								<p> The <span class="uicontrol">Transformation_ESQL</span> application is now shown in the Application Development view of your workspace. </p>
+								<p> Create an integration server and connect your App Connect Enterprise Toolkit: </p>
 								
-							
-								<p> No other preparation steps are required for this tutorial. </p>
 								
-							
-								<p> Next you will use the Flow exerciser to send HTTP requests to the message flow. </p>
+									
+									<ol>
+									
+									
+										<li> Assuming you are using a Windows platform, open an App Connect Enterprise Command Console and start an integration server using the following command:<br><code>IntegrationServer --work-dir C:\TESTSERVER --name TESTSERVER --admin-rest-api 7600 --http-port-number 7800 --console-log</code> <br>where <b>C:\TESTSERVER</b> is a folder on your file system that the server will use for its working directory.
+										
+										</li>
+									
+										<li> In the App Connect Enterprise Toolkit Integration Explorer view, right click the folder <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/IntegrationServers.png" alt> and select the menu item  <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/ConnectToAnIntegrationServer.png" alt>. In the connection details panel, specify the <b>Host name</b> to be <b>localhost</b>, the <b>Port</b> to be <b>7600</b> and click Finish. This will connect your Toolkit and display the integration server that you started in the last step <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/TESTSERVER.png" alt>
+										
+										</li>
+									
+										<li> Locate <b>Transformation_ESQL.bar</b> inside the <b>Transformation_ESQL</b> application in the Application Development view, and deploy it by dragging and dropping the BAR file on to the integration server in the Integration Explorer view.
+										
+										</li>
+									
+									
+									</ol>
+									
 								
 							
 						</div>
@@ -151,40 +166,27 @@
 		    		<div class="small-10 medium-10 large-10 columns divider">
 					
 				    	<div class="row content-details">
-					      	<h4>Follow these steps to complete the tutorial</h4>
+					      	<h4>Test the message flow to complete the tutorial</h4>
 					        
 						    
-								<p> The <span class="uicontrol">Transformation_ESQL</span> message flow should be open already: </p>
+								<p> Test the <b>Transformation_ESQL</b> message flow by sending it data using an HTTP client such as cURL: </p>
 								
 								
 									
 									<ol>
 									
 									
-										<li> Click the Flow Exerciser icon <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png" alt> to start recording the message path through the flow.
+										<li> <code>cd C:\workspace</code><br> where <b>C:\workspace</b> is the location of your Toolkit Eclipse workspace directory on the filesystem.<br><code>curl -X POST http://localhost:7800/Transformation_ESQL -d @.\Transformation_ESQL\input.xml</code>
 										
 										</li>
 									
-										<li> Click the Send Message icon <img src="https://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> to select a message to send to the flow.
-										
-										</li>
-									
-										<li> Choose Message1, edit the message data if you like, and click Send. Your request message is sent to the HTTP Input node.
+										<li> The transformed response message should look like this:<br><b>&lt;SaleEnvelope&gt;<br> &lt;SaleList&gt;<br>  &lt;Statement Style="Full" Type="Monthly"&gt;<br>   &lt;Customer&gt;<br>    &lt;Initials&gt;KA&lt;/Initials&gt;&lt;Name&gt;Braithwaite&lt;/Name&gt;&lt;Balance&gt;00.50&lt;/Balance&gt;<br>   &lt;/Customer&gt;<br>   &lt;Purchases&gt;<br>    &lt;Article&gt;&lt;Desc&gt;Twister&lt;/Desc&gt;&lt;Cost&gt;0.48&lt;/Cost&gt;&lt;Qty&gt;01&lt;/Qty&gt;&lt;/Article&gt;<br>    &lt;Article&gt;&lt;Desc&gt;The Times Newspaper&lt;/Desc&gt;&lt;Cost&gt;0.32&lt;/Cost&gt;&lt;Qty&gt;01&lt;/Qty&gt;&lt;/Article&gt;<br>   &lt;/Purchases&gt;<br>   &lt;Amount Currency="Sterling"&gt;0.8&lt;/Amount&gt;<br>  &lt;/Statement&gt;<br>  &lt;Statement Style="Full" Type="Monthly"&gt;<br>   &lt;Customer&gt;<br>    &lt;Initials&gt;TJ&lt;/Initials&gt;&lt;Name&gt;Dunnwin&lt;/Name&gt;&lt;Balance&gt;81.84&lt;/Balance&gt;<br>   &lt;/Customer&gt;<br>   &lt;Purchases&gt;<br>    &lt;Article&gt;&lt;Desc&gt;The Origin of Species&lt;/Desc&gt;&lt;Cost&gt;35.74&lt;/Cost&gt;&lt;Qty&gt;02&lt;/Qty&gt;&lt;/Article&gt;<br>    &lt;Article&gt;&lt;Desc&gt;Microscope&lt;/Desc&gt;&lt;Cost&gt;57.92&lt;/Cost&gt;&lt;Qty&gt;01&lt;/Qty&gt;&lt;/Article&gt;<br>   &lt;/Purchases&gt;<br>   &lt;Amount Currency="Euros"&gt;129.41&lt;/Amount&gt;<br>  &lt;/Statement&gt;<br> &lt;/SaleList&gt;<br>&lt;/SaleEnvelope&gt;</b>
 										
 										</li>
 									
 									
 									</ol>
 									
-								
-							
-								<p> After the request message is processed, the message path is automatically highlighted on the message flow. </p>
-								
-							
-								<p> Click on any connection to see the data that passed through that connection. </p>
-								
-							
-								<p> You can see that the request (input) message data has been transformed into a different response XML message. </p>
 								
 							
 						</div>
@@ -209,7 +211,7 @@
 					
 					
 					
-					<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()" title="Clean up and remove any changes in your workspace made by the tutorial."> Clean Up <img class="icon-image" src="http://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/close-cancel-error_128-red.png"></a></h4>
+					<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()" title="Clean up and remove any changes in your workspace made by the tutorial."> Clean Up <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/close-cancel-error_128-red.png"></a></h4>
 				    
 					
 				    </div>
