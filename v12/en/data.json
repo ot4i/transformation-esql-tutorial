@@ -1,0 +1,251 @@
+{
+    "version": "0.6",
+    "pageContent": 
+	{
+        "_comments": "JSON object that contains data for page labels, buttons, etc.",
+        "navItems": 
+		{
+            "_common": 
+			{
+                "buttonBackToGallery": 
+				{
+                    "name": "Back To Gallery",
+					"method": "backToGallery()",
+					"idName": "backToGallery"	
+                },
+                "buttonStartTutorial": 
+				{
+                    "name": "Start Tutorial",
+					"method": "startTutorialFromDetailsScreen()",
+					"idName": "startTutorial"
+                },
+				"buttonViewDetails": 
+				{
+                    "name": "View Details",
+					"method": "viewDetails()",
+					"idName": "stepsViewDetails"	
+                }
+            }
+        }
+    },
+    "tutorial": 
+	{
+        "_common": 
+		{
+            "name": "Transformation using ESQL in a message flow",
+            "shortDescription": "Learn how to use a Compute node to transform data using ESQL in an App Connect Enterprise message flow by exploring this simple example.",
+            "durationText": "This tutorial takes approximately",
+            "durationTime": "5 minutes",
+            "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
+            "resourceToOpen": "MainFlow",
+            "helpLink": 
+			{
+                "text": "IBM Knowledge Center",
+           		"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm"
+            }
+        },
+        "pageDetails": 
+		{
+            "topicsName": "Tutorial Topics",
+            "_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
+            "topicList": 
+			[
+                {
+                    "title": "Compute node"
+                },
+                {
+                    "title": "XML parsing and writing"
+                }
+            ],
+            "outcomesName": "Learning outcomes",
+            "_outcomesComment": "Use App Connect Enterprise to create and drive a message flow which transforms data using ESQL.",
+            "outcomeList": 
+			[
+                {
+                    "title": "Use App Connect Enterprise to create and drive a message flow which transforms data using ESQL."
+                }
+            ],
+            "summary": 
+			{
+                "overviewName": "OVERVIEW",
+                "_overviewComment": "This tutorial demonstrates a simple message flow which receives XML data over HTTP. The flow transforms the input XML structure into a different output XML structure using a Compute node (whose behavior is based on ESQL), and sends this back to the HTTP request.",
+                "sections": 
+				[
+                    {
+                        "section": "This tutorial demonstrates a simple message flow which receives XML data over HTTP. The flow transforms the input XML structure into a different output XML structure using a Compute node (whose behavior is based on ESQL), and sends this back to the HTTP request."
+                    },
+                    {
+                        "section": "In App Connect Enterprise, message flows can be used to transform input data structures into output data structures. Several transformation options are provided including a Compute node (which uses ESQL), a Mapping node, a JavaCompute node (which can navigate data using an App Connect Enterprise Java API or JAXB), an XSL Transform node and a .NETCompute node."
+                    }
+                ]
+            },
+			"helpLinks": 
+			{
+				"_helpLinksComment": "Helplinks that have a type:web attribute are rendered as web links. Otherwise, links are assumed to be to embedded Help topics in the Knowledge Center.",
+				"title": "Find out more",
+				"details": 
+				[
+					{
+						"title": "Knowledge Center link to ",
+						"description": "Developing integration solutions by using applications",
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+						"type": "web"
+					}
+				]
+			}
+        },
+        "pageSteps": 
+		{
+            "create": 
+			{
+                "overview": 
+				{
+                    "name": "Create",
+                    "heading": "Import project",
+                    "_createComment": "A description of what will happen when the user clicks Import.",
+                    "sections": 
+					[
+                        {
+                            "section": "Click <span class='uicontrol'>Import</span> and the <span class='uicontrol'>Transformation_ESQL</span> application will be imported into your workspace."
+                        },
+                        {
+                            "section": "The <span class='uicontrol'>Transformation_ESQL</span> message flow will be opened for you."
+                        }
+                    ]
+                },
+                "helpLinks": 
+				{
+                    "title": "Find out more",
+                    "details": 
+					[
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Developing integration solutions from scratch",
+                            "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+							"type": "web"
+                        }
+                    ]
+                },
+                "actions": 
+				{
+                    "title": "Create Actions",
+                    "details": 
+					[
+                        {
+                            "name": "Import",
+                            "method": "importArtifacts()"
+                        }
+                    ]
+                }
+            },
+            "prepare": 
+			{
+                "overview": 
+				{
+                    "name": "Prepare",
+                    "heading": "Prepare an Integration Server",
+                    "_prepareComment": "Prepare an Integration Server",
+                    "sections": 
+					[
+                        {
+                        "section": "Create an integration server and connect your App Connect Enterprise Toolkit:",
+                            "steps": 
+							{
+                                "type": "ordered",
+                                "details": 
+								[
+                                    {
+                                        "details": "Assuming you are using a Windows platform, open an App Connect Enterprise Command Console and start an integration server using the following command:<br><code>IntegrationServer --work-dir C:\\TESTSERVER --name TESTSERVER --admin-rest-api 7600 --http-port-number 7800 --console-log</code> <br>where <b>C:\\TESTSERVER</b> is a folder on your file system that the server will use for its working directory."
+                                    },
+                                    {
+                                        "details": "In the App Connect Enterprise Toolkit Integration Explorer view, right click the folder <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/IntegrationServers.png' alt='' /> and select the menu item  <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/ConnectToAnIntegrationServer.png' alt='' />. In the connection details panel, specify the <b>Host name</b> to be <b>localhost</b>, the <b>Port</b> to be <b>7600</b> and click Finish. This will connect your Toolkit and display the integration server that you started in the last step <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/TESTSERVER.png' alt='' />"
+                                    },
+                                    {
+                                        "details": "Locate <b>Transformation_ESQL.bar</b> inside the <b>Transformation_ESQL</b> application in the Application Development view, and deploy it by dragging and dropping the BAR file on to the integration server in the Integration Explorer view."
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "helpLinks": 
+				{
+                    "title": "Find out more",
+                    "details": 
+					[
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Compute node",
+                            "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/ac04660_.htm",
+							"type": "web"
+                        }
+                    ]
+                },
+                "actions-removed": 
+				{
+                    "title": "Prepare Actions",
+                    "details": 
+					[
+                        {
+                            "name": "Deploy",
+                            "method": "deployArtifacts()"
+                        }
+                    ]
+                }
+            },
+            "run": 
+			{
+                "overview": 
+				{
+                    "name": "Run",
+                    "heading": "Test the message flow to complete the tutorial",
+                    "_runComment": "",
+                    "sections": 
+					[
+                        {
+                            "section": "Test the <b>Transformation_ESQL</b> message flow by sending it data using an HTTP client such as cURL:",
+                            "steps": 
+							{
+                                "type": "ordered",
+                                "details": 
+								[
+                                    {
+                                        "details": "<code>cd C:\\workspace</code><br> where <b>C:\\workspace</b> is the location of your Toolkit Eclipse workspace directory on the filesystem.<br><code>curl -X POST http://localhost:7800/Transformation_ESQL -d @.\\Transformation_ESQL\\input.xml</code>"
+                                    },
+                                    {
+                                        "details": "The transformed response message should look like this:<br><b>&lt;SaleEnvelope&gt;<br> &lt;SaleList&gt;<br>  &lt;Statement Style=\"Full\" Type=\"Monthly\"&gt;<br>   &lt;Customer&gt;<br>    &lt;Initials&gt;KA&lt;/Initials&gt;&lt;Name&gt;Braithwaite&lt;/Name&gt;&lt;Balance&gt;00.50&lt;/Balance&gt;<br>   &lt;/Customer&gt;<br>   &lt;Purchases&gt;<br>    &lt;Article&gt;&lt;Desc&gt;Twister&lt;/Desc&gt;&lt;Cost&gt;0.48&lt;/Cost&gt;&lt;Qty&gt;01&lt;/Qty&gt;&lt;/Article&gt;<br>    &lt;Article&gt;&lt;Desc&gt;The Times Newspaper&lt;/Desc&gt;&lt;Cost&gt;0.32&lt;/Cost&gt;&lt;Qty&gt;01&lt;/Qty&gt;&lt;/Article&gt;<br>   &lt;/Purchases&gt;<br>   &lt;Amount Currency=\"Sterling\"&gt;0.8&lt;/Amount&gt;<br>  &lt;/Statement&gt;<br>  &lt;Statement Style=\"Full\" Type=\"Monthly\"&gt;<br>   &lt;Customer&gt;<br>    &lt;Initials&gt;TJ&lt;/Initials&gt;&lt;Name&gt;Dunnwin&lt;/Name&gt;&lt;Balance&gt;81.84&lt;/Balance&gt;<br>   &lt;/Customer&gt;<br>   &lt;Purchases&gt;<br>    &lt;Article&gt;&lt;Desc&gt;The Origin of Species&lt;/Desc&gt;&lt;Cost&gt;35.74&lt;/Cost&gt;&lt;Qty&gt;02&lt;/Qty&gt;&lt;/Article&gt;<br>    &lt;Article&gt;&lt;Desc&gt;Microscope&lt;/Desc&gt;&lt;Cost&gt;57.92&lt;/Cost&gt;&lt;Qty&gt;01&lt;/Qty&gt;&lt;/Article&gt;<br>   &lt;/Purchases&gt;<br>   &lt;Amount Currency=\"Euros\"&gt;129.41&lt;/Amount&gt;<br>  &lt;/Statement&gt;<br> &lt;/SaleList&gt;<br>&lt;/SaleEnvelope&gt;</b>"
+                                    }
+                                ]
+                            }
+                        }                        
+                    ]
+                },
+                "helpLinks": 
+				{
+                    "title": "Find out more",
+                    "details": 
+		    [
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Testing your message flow by using the Flow exerciser",
+                            "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/rt26110_.htm",
+							"type": "web"
+                        }
+                    ]
+                },
+				"exits": 
+				{
+					"title": "Run Exits",
+					"details": 
+					[
+						{
+							"name": "Clean Up",
+							"description": "Clean up and remove any changes in your workspace made by the tutorial.",
+							"method": "cleanUp()"
+						}
+					]
+				}
+            }
+        }
+    }
+}
